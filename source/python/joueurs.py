@@ -17,3 +17,6 @@ class joueurs:
 
     # def score(self, rep):
     #     self.score = self.score + rep
+
+
+print("hello world")

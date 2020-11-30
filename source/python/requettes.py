@@ -5,6 +5,7 @@ class Connection:
     def __init__(self):
         self.lien = mysql.connect(
             host='localhost',
+            port = '8081',
             password='root',
             user='root',
             database='trivial'

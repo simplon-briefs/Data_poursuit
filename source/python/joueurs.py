@@ -15,6 +15,3 @@ class Joueur:
             nouveau = Joueur(id, input(f"pseudo joueur n°{i+1}: "), 0, input("Choix de la couleur : "),0)
             lst.append(nouveau)
         return lst
-
-    # def score(self, rep):
-    #     self.score = self.score + rep

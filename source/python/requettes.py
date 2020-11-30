@@ -1,5 +1,5 @@
 import mysql.connector as mysql
-from algo_choix_alea import Question
+from question import Question
 
 class Connection:
     def __init__(self):
@@ -10,8 +10,7 @@ class Connection:
             database='trivial'
             )
         self.curseur = self.lien.cursor()
-        self.liste_finale = self.infos_questions()
-
+    
 
 
 
@@ -25,15 +24,16 @@ class Connection:
         infos = list(self.curseur.fetchall())
         return infos
 
-    def infos_questions(self):
+    
+    def get_questions_reponse(self):
         liste_finale = list()
         liste_questions = self.retour_db("libelle_question","questions")
         range_reponse_true = self.retour_db_con("libelle_reponse", "reponses", "valeur_reponse = 1")
         for numero in range(len(range_reponse_true)):
             question = liste_questions[numero]
             id_question = liste_questions.index(question) + 1
-            reponse_v = (self.retour_db_con("libelle_reponse", "reponses", str(f"id_question = {id_question} AND valeur_reponse = 1")))[0]
-            reponse_f = self.retour_db_con("libelle_reponse", "reponses", str(f"id_question = {id_question} AND valeur_reponse = 2"))
+            reponse_v = (self.retour_db_con("libelle_reponse", "reponses", str(f"id_question = {id_question} AND valeur_reponse = 1")))
+            reponse_f = self.retour_db_con("libelle_reponse", "reponses", str(f"id_question = {id_question} AND valeur_reponse = 0"))
 
             liste_finale.append(Question(id_question, question, reponse_v, reponse_f))
         return liste_finale
@@ -44,4 +44,4 @@ class Connection:
 
 
 
-Connection().display()
+#print(Connection().get_questions_reponse())

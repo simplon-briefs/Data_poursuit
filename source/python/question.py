@@ -17,9 +17,6 @@ class Question:
         print("reponse_true = ",self.reponse_true)
         print("reponse_fake = ", self.reponse_fake)
         print("reponse_all = ",self.reponse_all)
-    
-    def get_random_id_question(self):
-        id_random = []
-        for _ in range(10):
-            id_random.append(random.randint(0,100))
-        return id_random
+    @classmethod
+    def get_random_question(cls, liste):
+        return random.shuffle(liste)

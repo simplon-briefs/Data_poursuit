@@ -17,6 +17,7 @@ class Question:
         print("reponse_true = ",self.reponse_true)
         print("reponse_fake = ", self.reponse_fake)
         print("reponse_all = ",self.reponse_all)
+    
     @classmethod
     def get_random_question(cls, liste):
         return random.shuffle(liste)

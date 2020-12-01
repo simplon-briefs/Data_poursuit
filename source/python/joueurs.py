@@ -12,6 +12,6 @@ class Joueur:
     def infos(cls, nb_joueurs):
         lst = []
         for i in range(nb_joueurs):
-            nouveau = Joueur(id, input(f"pseudo joueur n°{i+1}: "), input("Choix de la couleur : "), 0 ,0)
+            nouveau = Joueur(id, input(f"pseudo joueur n°{i+1}: "), input("Choix de la couleur : "), {'Big Data' : 0, 'IA' : 0, 'math' : 0, 'ethique' : 0, 'pytohn' : 0} ,0)
             lst.append(nouveau)
         return lst

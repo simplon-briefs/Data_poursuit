@@ -3,6 +3,7 @@ from question import Question
 from joueurs import Joueur
 import random
 
+
 def get_random_question(liste):
     random.shuffle(liste)
     return liste 

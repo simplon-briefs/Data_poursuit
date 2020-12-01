@@ -7,11 +7,11 @@ def creer_dico_theme(index_theme):
     liste_dico = []
     dico_theme = dict()
     for numero in range(len(liste_finale)):
-        print(liste_theme[numero])
-        print(index_theme)
         if liste_theme[numero] == index_theme:
             liste_dico.append(liste_finale[numero])
     dico_theme[liste_titres[index_theme-1]] = liste_dico
     return dico_theme
 
-creer_dico_theme(1)
+dicte = creer_dico_theme(1)
+
+print(dicte)

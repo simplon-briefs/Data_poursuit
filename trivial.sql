@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Nov 30, 2020 at 11:06 AM
+-- Generation Time: Dec 01, 2020 at 11:02 AM
 -- Server version: 5.7.24
 -- PHP Version: 7.4.1
 
@@ -184,44 +184,16 @@ ALTER TABLE `theme`
 --
 
 --
--- AUTO_INCREMENT for table `joueurs`
---
-ALTER TABLE `joueurs`
-  MODIFY `id_joueur` int(2) NOT NULL AUTO_INCREMENT;
-
---
 -- AUTO_INCREMENT for table `questions`
 --
 ALTER TABLE `questions`
   MODIFY `id_question` int(7) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
--- AUTO_INCREMENT for table `reponses`
---
-ALTER TABLE `reponses`
-  MODIFY `id_reponse` int(7) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=54;
-
---
 -- AUTO_INCREMENT for table `theme`
 --
 ALTER TABLE `theme`
   MODIFY `id-theme` int(1) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
-
---
--- Constraints for dumped tables
---
-
---
--- Constraints for table `questions`
---
-ALTER TABLE `questions`
-  ADD CONSTRAINT `questions_ibfk_1` FOREIGN KEY (`id_theme`) REFERENCES `theme` (`id-theme`);
-
---
--- Constraints for table `reponses`
---
-ALTER TABLE `reponses`
-  ADD CONSTRAINT `reponses_ibfk_1` FOREIGN KEY (`id_question`) REFERENCES `questions` (`id_question`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

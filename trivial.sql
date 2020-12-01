@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Dec 01, 2020 at 11:02 AM
+-- Generation Time: Dec 01, 2020 at 02:52 PM
 -- Server version: 5.7.24
 -- PHP Version: 7.4.1
 
@@ -56,8 +56,7 @@ CREATE TABLE `questions` (
 
 INSERT INTO `questions` (`id_question`, `libelle_question`, `id_theme`, `difficulte_question`) VALUES
 (1, 'Quels sont les \"trois V\" du Big Data ?', 1, 1),
-(2, 'Quel est le \"poids\" du big data ?', 1, 2),
-(3, 'Quel définition donner au Big Data ?', 1, 1),
+(2, '110 zetaoctet de données', 1, 2),
 (4, 'Quelles étapes pour déployer une solution Big Data ?', 1, 2),
 (5, 'De combien le volume de données numériques créés a-t-il augmenté En 2020 par rapport à 2010 ?', 1, 2),
 (6, 'Par combien sera multiplier le volume du big data en 2035 par rapport a 2020', 1, 3),
@@ -69,9 +68,7 @@ INSERT INTO `questions` (`id_question`, `libelle_question`, `id_theme`, `difficu
 (12, 'Combien de gigaoctets y a-t-il dans un exaoctet ?', 1, 1),
 (13, 'Combien d’exaoctets de données le LHC «Large Hadron Collider» peut-il produire par jour ?', 1, 3),
 (14, 'Une fois terminé, le flux de données généré par le radiotélescope SKA sera équivalent à…', 1, 3),
-(15, 'Quel est le rôle de Hadoop dans l’analyse de données volumineuses ?', 1, 3),
-(16, 'Lequel des éléments suivants est une base de données distribuée à plusieurs niveaux?', 1, 3),
-(17, 'Quel définition donner à Hadoop ?', 1, 3);
+(16, 'Lequel des éléments suivants est une base de données distribuée à plusieurs niveaux?', 1, 3);
 
 -- --------------------------------------------------------
 
@@ -92,8 +89,7 @@ CREATE TABLE `reponses` (
 
 INSERT INTO `reponses` (`id_reponse`, `id_question`, `libelle_reponse`, `valeur_reponse`) VALUES
 (19, 1, 'Volume, Vitesse, Variété', 1),
-(20, 2, 'en 2020 --> 610 zetaoctet de données', 1),
-(21, 3, 'Ensembles de données volumineux, complexes et en constante augmentation qui ne peuvent pas être gérés et manipuler avec des logiciels et techniques classiques.', 1),
+(20, 2, '610 zetaoctet de données', 1),
 (22, 4, '1. Ingestion de données,\r\n2. Stockage de données,\r\n3. Traitement de l’information.', 1),
 (23, 5, '23,5 ( (de 2 milliards de téraoctets à 47).', 1),
 (24, 6, '45', 1),
@@ -120,12 +116,12 @@ INSERT INTO `reponses` (`id_reponse`, `id_question`, `libelle_reponse`, `valeur_
 (45, 14, 'Un dixième du trafic Internet global', 0),
 (46, 14, 'Deux fois le  trafic Internet global', 0),
 (47, 14, 'Dix fois le trafic Internet global', 1),
-(48, 15, 'Hadoop facilite l’analyse des données volumineuses car il fournit un stockage et aide à la collecte et au traitement des données.', 1),
 (49, 16, 'HDFS', 0),
 (50, 16, 'HBase', 1),
 (51, 16, 'Les deux ci-dessus', 0),
 (52, 16, 'Aucune de ces réponses', 0),
-(53, 17, 'Hadoop est un framework logiciel open source, basé sur Java, permettant de stocker des données, et de lancer des applications sur des grappes de machines standards. Cette solution offre un espace de stockage massif pour tous les types de données, une immense puissance de traitement et la possibilité de prendre en charge une quantité de tâches virtuellement illimitée.', 1);
+(54, 2, '110 zetaoctet de données', 0),
+(55, 2, '1010 zetaoctet de données', 0);
 
 -- --------------------------------------------------------
 
@@ -134,7 +130,7 @@ INSERT INTO `reponses` (`id_reponse`, `id_question`, `libelle_reponse`, `valeur_
 --
 
 CREATE TABLE `theme` (
-  `id-theme` int(1) NOT NULL,
+  `id_theme` int(1) NOT NULL,
   `nom_theme` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -142,7 +138,7 @@ CREATE TABLE `theme` (
 -- Dumping data for table `theme`
 --
 
-INSERT INTO `theme` (`id-theme`, `nom_theme`) VALUES
+INSERT INTO `theme` (`id_theme`, `nom_theme`) VALUES
 (1, 'Big Data'),
 (2, 'IA'),
 (3, 'Ethique'),
@@ -177,11 +173,17 @@ ALTER TABLE `reponses`
 -- Indexes for table `theme`
 --
 ALTER TABLE `theme`
-  ADD PRIMARY KEY (`id-theme`);
+  ADD PRIMARY KEY (`id_theme`);
 
 --
 -- AUTO_INCREMENT for dumped tables
 --
+
+--
+-- AUTO_INCREMENT for table `joueurs`
+--
+ALTER TABLE `joueurs`
+  MODIFY `id_joueur` int(2) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `questions`
@@ -190,10 +192,32 @@ ALTER TABLE `questions`
   MODIFY `id_question` int(7) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
+-- AUTO_INCREMENT for table `reponses`
+--
+ALTER TABLE `reponses`
+  MODIFY `id_reponse` int(7) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=56;
+
+--
 -- AUTO_INCREMENT for table `theme`
 --
 ALTER TABLE `theme`
-  MODIFY `id-theme` int(1) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id_theme` int(1) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `questions`
+--
+ALTER TABLE `questions`
+  ADD CONSTRAINT `questions_ibfk_1` FOREIGN KEY (`id_theme`) REFERENCES `theme` (`id_theme`);
+
+--
+-- Constraints for table `reponses`
+--
+ALTER TABLE `reponses`
+  ADD CONSTRAINT `reponses_ibfk_1` FOREIGN KEY (`id_question`) REFERENCES `questions` (`id_question`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

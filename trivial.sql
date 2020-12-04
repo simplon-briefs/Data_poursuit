@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Dec 04, 2020 at 09:47 AM
+-- Generation Time: Dec 04, 2020 at 10:23 AM
 -- Server version: 5.7.24
 -- PHP Version: 7.4.1
 
@@ -56,7 +56,7 @@ CREATE TABLE `questions` (
 
 INSERT INTO `questions` (`id_question`, `libelle_question`, `id_theme`, `difficulte_question`) VALUES
 (1, 'Quels sont les \"trois V\" du Big Data ?', 1, 1),
-(2, '110 zetaoctet de données', 1, 2),
+(2, 'Quel est le support le plus adapté pour stocker un jeu de données important.', 1, 1),
 (3, 'En 2020 de combien le volume de données numériques créés a-t-il augmenté En 2020 par rapport à 2010 ?', 1, 2),
 (4, 'Par combien sera multiplier le volume du big data en 2035 par rapport a 2020', 1, 3),
 (5, 'Combien d’heures de vidéo sont téléchargées sur YouTube chaque minute ?', 1, 1),
@@ -69,8 +69,7 @@ INSERT INTO `questions` (`id_question`, `libelle_question`, `id_theme`, `difficu
 (12, 'Une fois terminé, le flux de données généré par le radiotélescope SKA sera équivalent à…', 1, 3),
 (13, 'Lequel des éléments suivants est une base de données distribuée à plusieurs niveaux?', 1, 3),
 (14, 'Le volume de données des entreprise double tout les ... an(s)', 1, 2),
-(15, 'Quel est le \"poids\" du Big Data en 2020?', 1, 1),
-(16, 'Quel est le support le plus adapté pour stocker un jeu de données important.', 1, 1);
+(15, 'Quel est le \"poids\" du Big Data en 2020?', 1, 1);
 
 -- --------------------------------------------------------
 

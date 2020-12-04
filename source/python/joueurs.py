@@ -1,12 +1,12 @@
 
 class Joueur:
 
-    def __init__(self, id, nom, couleur, score, camembert):
+    def __init__(self, id, nom, couleur):
         self.id = id
         self.nom = nom
         self.couleur = couleur
-        self.score = score
-        self.camembert = camembert
+        self.score = {}
+        self.camembert = 0
         
     @classmethod
     def infos(cls, nb_joueurs):

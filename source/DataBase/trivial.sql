@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Dec 04, 2020 at 01:22 PM
+-- Generation Time: Dec 04, 2020 at 01:33 PM
 -- Server version: 5.7.24
 -- PHP Version: 7.4.1
 
@@ -21,8 +21,6 @@ SET time_zone = "+00:00";
 --
 -- Database: `trivial`
 --
-CREATE DATABASE IF NOT EXISTS `trivial` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
-USE `trivial`;
 
 -- --------------------------------------------------------
 
@@ -185,7 +183,7 @@ CREATE TABLE `reponses` (
 
 INSERT INTO `reponses` (`id_reponse`, `id_question`, `libelle_reponse`, `valeur_reponse`) VALUES
 (19, 1, 'Volume, Vitesse, Variété', 1),
-(20, 2, '610 zetaoctet de données', 1),
+(20, 2, 'Quel est le \"poids\" du big data en 2020 ?', 1),
 (23, 5, '24', 1),
 (24, 6, '45', 1),
 (25, 7, '35', 0),

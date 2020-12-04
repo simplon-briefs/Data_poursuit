@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Dec 01, 2020 at 02:52 PM
+-- Generation Time: Dec 04, 2020 at 09:47 AM
 -- Server version: 5.7.24
 -- PHP Version: 7.4.1
 
@@ -57,18 +57,20 @@ CREATE TABLE `questions` (
 INSERT INTO `questions` (`id_question`, `libelle_question`, `id_theme`, `difficulte_question`) VALUES
 (1, 'Quels sont les \"trois V\" du Big Data ?', 1, 1),
 (2, '110 zetaoctet de données', 1, 2),
-(4, 'Quelles étapes pour déployer une solution Big Data ?', 1, 2),
-(5, 'De combien le volume de données numériques créés a-t-il augmenté En 2020 par rapport à 2010 ?', 1, 2),
-(6, 'Par combien sera multiplier le volume du big data en 2035 par rapport a 2020', 1, 3),
-(7, 'Combien d’heures de vidéo sont téléchargées sur YouTube chaque minute ?', 1, 1),
-(8, 'Vrai ou faux ? 90 % des données dans le monde ont été créées dans les deux dernières années.', 1, 2),
-(9, 'Quelle entreprise informatique est le plus grand fournisseur Big Data dans le monde ?', 1, 2),
-(10, 'Le modèle de programmation MapReduce a été initialement développé par…', 1, 2),
-(11, 'Qui a créé le framework logiciel Hadoop, très populaire dans le monde du Big Data ?', 1, 2),
-(12, 'Combien de gigaoctets y a-t-il dans un exaoctet ?', 1, 1),
-(13, 'Combien d’exaoctets de données le LHC «Large Hadron Collider» peut-il produire par jour ?', 1, 3),
-(14, 'Une fois terminé, le flux de données généré par le radiotélescope SKA sera équivalent à…', 1, 3),
-(16, 'Lequel des éléments suivants est une base de données distribuée à plusieurs niveaux?', 1, 3);
+(3, 'En 2020 de combien le volume de données numériques créés a-t-il augmenté En 2020 par rapport à 2010 ?', 1, 2),
+(4, 'Par combien sera multiplier le volume du big data en 2035 par rapport a 2020', 1, 3),
+(5, 'Combien d’heures de vidéo sont téléchargées sur YouTube chaque minute ?', 1, 1),
+(6, 'Vrai ou faux ? 90 % des données dans le monde ont été créées dans les deux dernières années.', 1, 2),
+(7, 'Quelle entreprise informatique est le plus grand fournisseur Big Data dans le monde ?', 1, 2),
+(8, 'Le modèle de programmation MapReduce a été initialement développé par…', 1, 2),
+(9, 'Qui a créé le framework logiciel Hadoop, très populaire dans le monde du Big Data ?', 1, 2),
+(10, 'Combien de gigaoctets y a-t-il dans un exaoctet ?', 1, 1),
+(11, 'Combien d’exaoctets de données le LHC «Large Hadron Collider» peut-il produire par jour ?', 1, 3),
+(12, 'Une fois terminé, le flux de données généré par le radiotélescope SKA sera équivalent à…', 1, 3),
+(13, 'Lequel des éléments suivants est une base de données distribuée à plusieurs niveaux?', 1, 3),
+(14, 'Le volume de données des entreprise double tout les ... an(s)', 1, 2),
+(15, 'Quel est le \"poids\" du Big Data en 2020?', 1, 1),
+(16, 'Quel est le support le plus adapté pour stocker un jeu de données important.', 1, 1);
 
 -- --------------------------------------------------------
 
@@ -88,29 +90,31 @@ CREATE TABLE `reponses` (
 --
 
 INSERT INTO `reponses` (`id_reponse`, `id_question`, `libelle_reponse`, `valeur_reponse`) VALUES
-(19, 1, 'Volume, Vitesse, Variété', 1),
-(20, 2, '610 zetaoctet de données', 1),
-(22, 4, '1. Ingestion de données,\r\n2. Stockage de données,\r\n3. Traitement de l’information.', 1),
-(23, 5, '23,5 ( (de 2 milliards de téraoctets à 47).', 1),
-(24, 6, '45', 1),
-(25, 7, '35', 0),
-(26, 7, '60', 0),
-(27, 7, '100', 1),
-(28, 8, 'VRAI', 1),
-(29, 8, 'FAUX', 0),
-(30, 9, 'DELL', 0),
-(31, 9, 'HP', 0),
-(32, 9, 'IBM', 1),
-(33, 10, 'Appache Software Foundation', 0),
-(34, 10, 'Google', 1),
-(35, 10, 'Microsoft Research', 0),
-(36, 11, 'Doug CUTTING', 1),
-(37, 11, 'Richard STALLMAN', 0),
-(38, 11, 'Alan COX', 0),
-(39, 12, 'Un millier', 0),
-(40, 12, 'Un million', 0),
-(41, 12, 'Un milliard', 1),
-(42, 13, '5 exaoctets', 0),
+(1, 16, 'Un SSD avec un système de sécurité.', 1),
+(2, 16, 'Un disque dur classique.', 0),
+(3, 16, 'Une clé Usb avec un mot de passe.', 0),
+(4, 1, 'Volume, Vitesse, Variété, Véracité, Variété.', 1),
+(5, 2, '610 zetaoctet de données', 1),
+(6, 5, '24', 1),
+(7, 6, '45', 1),
+(8, 7, '35', 0),
+(9, 7, '60', 0),
+(10, 7, '100', 1),
+(11, 8, 'VRAI', 1),
+(12, 8, 'FAUX', 0),
+(13, 9, 'DELL', 0),
+(14, 9, 'HP', 0),
+(15, 9, 'IBM', 1),
+(16, 10, 'Appache Software Foundation', 0),
+(17, 10, 'Google', 1),
+(18, 10, 'Microsoft Research', 0),
+(19, 11, 'Doug CUTTING', 1),
+(20, 11, 'Richard STALLMAN', 0),
+(21, 11, 'Alan COX', 0),
+(22, 12, 'Un millier', 0),
+(23, 12, 'Un million', 0),
+(24, 12, 'Un milliard', 1),
+(25, 13, '5 exaoctets', 0),
 (43, 13, '50 exaoctets', 0),
 (44, 13, '500 exaoctets', 1),
 (45, 14, 'Un dixième du trafic Internet global', 0),
@@ -118,10 +122,13 @@ INSERT INTO `reponses` (`id_reponse`, `id_question`, `libelle_reponse`, `valeur_
 (47, 14, 'Dix fois le trafic Internet global', 1),
 (49, 16, 'HDFS', 0),
 (50, 16, 'HBase', 1),
-(51, 16, 'Les deux ci-dessus', 0),
+(51, 16, 'Les deux', 0),
 (52, 16, 'Aucune de ces réponses', 0),
 (54, 2, '110 zetaoctet de données', 0),
-(55, 2, '1010 zetaoctet de données', 0);
+(55, 2, '1010 zetaoctet de données', 0),
+(56, 17, '1', 0),
+(57, 17, '1,2', 1),
+(58, 17, '2', 0);
 
 -- --------------------------------------------------------
 
@@ -139,11 +146,11 @@ CREATE TABLE `theme` (
 --
 
 INSERT INTO `theme` (`id_theme`, `nom_theme`) VALUES
-(1, 'Big Data'),
-(2, 'IA'),
-(3, 'Ethique'),
-(4, 'Python'),
-(5, 'Mathématique');
+(1, 'big data'),
+(2, 'ia'),
+(3, 'ethique'),
+(4, 'python'),
+(5, 'mathématique');
 
 --
 -- Indexes for dumped tables
@@ -186,18 +193,6 @@ ALTER TABLE `joueurs`
   MODIFY `id_joueur` int(2) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `questions`
---
-ALTER TABLE `questions`
-  MODIFY `id_question` int(7) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
-
---
--- AUTO_INCREMENT for table `reponses`
---
-ALTER TABLE `reponses`
-  MODIFY `id_reponse` int(7) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=56;
-
---
 -- AUTO_INCREMENT for table `theme`
 --
 ALTER TABLE `theme`
@@ -212,12 +207,6 @@ ALTER TABLE `theme`
 --
 ALTER TABLE `questions`
   ADD CONSTRAINT `questions_ibfk_1` FOREIGN KEY (`id_theme`) REFERENCES `theme` (`id_theme`);
-
---
--- Constraints for table `reponses`
---
-ALTER TABLE `reponses`
-  ADD CONSTRAINT `reponses_ibfk_1` FOREIGN KEY (`id_question`) REFERENCES `questions` (`id_question`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

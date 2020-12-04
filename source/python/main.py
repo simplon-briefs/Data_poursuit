@@ -15,12 +15,12 @@ def jeu(lst, lst2):
         for joueur in lst:
             tmp = True
             print(f"Nom : {joueur.nom}\n couleur : {joueur.couleur}\n score : {joueur.score}\n camembert : {joueur.camembert}")
-            print(lst2.keys())
-            saisie_theme = input("choisisez le theme : ")
-            liste_inter = lst2[saisie_theme]
-            liste_random = get_random_question(liste_inter)
             i = 0
-            while tmp :  
+            while tmp :
+                print(lst2.keys())
+                saisie_theme = input("choisisez le theme : ").lower()
+                liste_inter = lst2[saisie_theme]
+                liste_random = get_random_question(liste_inter)
                 print(liste_random[i].question)
                 print(liste_random[i].reponse_all)
                 vrais = liste_random[i].reponse_true

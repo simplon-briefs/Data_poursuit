@@ -26,17 +26,17 @@ class Root:
         return liste
 
     def compute(self):
-        self.display_add_joueur()
+        self.main()
 
 
     def main(self):
-        Label(self.root, text=6).grid(row=6, column=1)
+        Label(self.root, text="score").grid(row=6, column=1)
         Label(self.root, text="nom").grid(row=7, column=1)
 
         question_reponse_random = self.get_random_question(self.question_reponse)
-        poiteur = random.randint(0, len(question_reponse_random["big data"]))
+        poiteur = random.randint(0, len(question_reponse_random))
         poiteur -=1
-        liste_question_reponse = question_reponse_random["big data"]
+        liste_question_reponse = question_reponse_random
         Label(self.root, text=liste_question_reponse[poiteur].question,height=5).grid(column=2, row=1)
 
         if len(liste_question_reponse[poiteur].reponse_all) == 1:
@@ -60,6 +60,7 @@ class Root:
     
     def verif_rep(self, item, instance):
         print(instance.reponse_true)
+        print(item)
         if item  == instance.reponse_true:
             self.reload_window()
         else:
@@ -73,22 +74,7 @@ class Root:
             l.destroy()
         self.main()
 
-    def display_add_joueur(self):
-        Label1 = Label(self.root, text = 'Nom : ').grid(column=2, row=1, sticky='w')
-        Champ = Entry(self.root, textvariable= self.joueur[0], width=31)
-        Champ.focus_set()
-        Champ.grid(column=3, row=1, sticky='sw', columnspan=2, padx=10)
-
-        Label2 = Label(self.root, text = 'Couleur : ').grid(column=2, row=2, sticky='w')
-        Champ = Entry(self.root, textvariable= self.joueur[1], width=31)
-        Champ.focus_set()
-        Champ.grid(column=3, row=2, sticky='sw', columnspan=2, padx=10)
-
-
-        bouton2= Button (self.root, text="Envoyer", command=lambda: self.add_joueur(self.joueur), pady=2)
-        bouton2.grid(column=2, row=11,sticky='sw',pady=20)
-        bouton3= Button (self.root, text="Fin", command=lambda: self.end_joueur(), pady=2)
-        bouton3.grid(column=3, row=11,sticky='sw',pady=20)
+    
         
 
     def add_joueur(self, joueur):
@@ -106,13 +92,5 @@ class Root:
         else:
             self.selected_player = 0
             return self.selected_player
-
-    def add_point(self):
-        if self.joueur_liste[self.selected_player].score["big data"] == None:
-            self.joueur_liste[self.selected_player].score["big data"] = 0
-        else:
-            self.joueur_liste[self.selected_player].score["big data"] += 1
-        return self.joueur_liste[self.selected_player].score["big data"]
-
 
 Root().root.mainloop()
